@@ -21,7 +21,7 @@ jobs:
           ref: main
           server-url: https://blackduck.saas-qa.beescloud.com
           api-token: ${{ secrets.BD_API_TOKEN }}
-          project-name: blackduckscan-private-image-scan
+          project-name: blackduckscan-private-image-test
           project-version: 0.0.3
           detect-cli-params:
                 --detect.tools=CONTAINER_SCAN
