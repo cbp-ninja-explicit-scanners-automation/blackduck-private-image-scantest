@@ -18,9 +18,12 @@ jobs:
       - name: black duck hybrid plugin scan
         uses: cloudbees-io/blackduck-sca-scan-dependency@v2
         with:
+          ref: main
           server-url: https://blackduck.saas-qa.beescloud.com
           api-token: ${{ secrets.BD_API_TOKEN }}
           project-name: blackduckscan-private-image-scan
-          project-version: 0.0.1
-          detect-cli-params: --logging.level.detect=DEBUG --blackduck.offline.mode=false
-          ref: main
+          project-version: 0.0.3
+          detect-cli-params:
+                --detect.tools=CONTAINER_SCAN
+                --detect.container.scan.file.path=./vulnerable-python.tar
+          
