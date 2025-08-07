@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   schedule:
     - cron: 30 3 * * 2
-    - cron: 30 3 * * 5
+    - cron: 30 3 * * 4
 permissions:
   scm-token-own: read
   scm-token-org: read
@@ -23,7 +23,7 @@ jobs:
           ref: main
           server-url: https://blackduck.saas-qa.beescloud.com
           api-token: ${{ secrets.BD_API_TOKEN }}
-          project-name: blackduckscan-private-image-test-node
+          project-name: blackduckscan-private-image-test-1
           project-version: 0.0.3
           detect-cli-params:
                 --detect.tools=CONTAINER_SCAN
